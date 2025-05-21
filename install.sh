@@ -10,3 +10,6 @@ cd "$NODE_NAME" || exit 1
 composer install
 composer dump-autoload
 git init
+php artisan microservice:prepare-stubs
+php artisan microservice:prepare-name "$NODE_NAME"
+php artisan microservice:prepare-jwt-secret

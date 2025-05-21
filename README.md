@@ -9,3 +9,4 @@ Or with wget:
 ```bash
 bash <(wget -qO- https://home.timc.biz/getorder/core/skeleton/install.sh)
 ```
+
