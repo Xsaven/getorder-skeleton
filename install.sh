@@ -12,4 +12,5 @@ composer dump-autoload
 git init
 php artisan microservice:prepare-stubs
 php artisan microservice:prepare-name "$NODE_NAME"
-php artisan microservice:prepare-jwt-secret
+read -rp "Введіть JWT сікрет (або залешіть пусти для автогенерації): " JWT_SECRET
+php artisan microservice:prepare-jwt-secret "$JWT_SECRET"
