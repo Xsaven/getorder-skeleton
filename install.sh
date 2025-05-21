@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODE_NAME=${1:-my-node}
+NODE_NAME=${NODE_NAME:-my-node}
 REPO_URL="git@github.com:Xsaven/getorder-skeleton.git"
 
 composer create-project getorder/skeleton "$NODE_NAME" \
