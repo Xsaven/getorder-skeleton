@@ -60,9 +60,12 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
+            "@git init",
             "@php artisan key:generate --ansi",
-            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan microservice:prepare-stubs",
+            "@php artisan microservice:prepare-jwt-secret",
+            "@bash -c 'if [ -z \"$NODE_NAME\" ]; then echo \"NODE_NAME is not set\"; exit 1; fi; php artisan microservice:prepare-name \"$NODE_NAME\"'",
+            "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\""
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
