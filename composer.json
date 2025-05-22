@@ -63,9 +63,15 @@
             "@git init",
             "@php artisan key:generate --ansi",
             "@php artisan microservice:prepare-stubs",
-            "@php artisan microservice:prepare-jwt-secret",
-            "@php artisan microservice:prepare-name \"$NODE_NAME\"",
-            "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\""
+            "@microservice:env-variable APP_URL \"$APP_URL\" --force",
+            "@microservice:env-variable CURRENT_SERVICE_NAME \"$NODE_NAME\" --force",
+            "@microservice:env-variable JWT_SECRET \"$JWT_SECRET\" --force",
+            "@microservice:env-variable DB_USERNAME \"$DB_USERNAME\" --force",
+            "@microservice:env-variable DB_PASSWORD \"$DB_PASSWORD\" --force",
+            "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\"",
+            "@microservice:env-variable APP_URL \"$APP_URL_PROD\" --force --production",
+            "@microservice:env-variable DB_USERNAME \"$DB_USERNAME_PROD\" --force --production",
+            "@microservice:env-variable DB_PASSWORD \"$DB_PASSWORD_PROD\" --force --production"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
