@@ -64,7 +64,7 @@
             "@php artisan key:generate --ansi",
             "@php artisan microservice:prepare-stubs",
             "@php artisan microservice:prepare-jwt-secret",
-            "@bash -c 'if [ -z \"$NODE_NAME\" ]; then echo \"NODE_NAME is not set\"; exit 1; fi; php artisan microservice:prepare-name \"$NODE_NAME\"'",
+            "@php artisan microservice:prepare-name \"$NODE_NAME\"",
             "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\""
         ],
         "dev": [
