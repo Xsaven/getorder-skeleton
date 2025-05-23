@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use GetOrder\Core\Abstracts\AbstractController;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\RedirectResponse;
 
-class VerifyEmailController extends Controller
+/**
+ * VerifyEmailController class
+ *
+ * This class handles the email verification process for users.
+ *
+ * @package App\Http\Controllers\Auth
+ */
+class VerifyEmailController extends AbstractController
 {
     /**
      * Mark the authenticated user's email address as verified.
+     *
+     * @param EmailVerificationRequest $request
+     * @return RedirectResponse
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {

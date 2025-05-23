@@ -22,10 +22,10 @@
         "php": "^8.2",
         "getorder/core": "^v1.0",
         "laravel/framework": "^12.0",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "livewire/flux": "^2.1.1",
-        "livewire/volt": "^1.7.0",
-        "laravel/sanctum": "^4.0"
+        "livewire/volt": "^1.7.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -63,7 +63,9 @@
         "post-create-project-cmd": [
             "git init",
             "@php artisan key:generate --ansi",
+            "@php artisan model:publish User",
             "@php artisan microservice:prepare-stubs",
+            "@php artisan microservice:prepare-event-service-provider",
             "@php artisan microservice:env-variable APP_URL \"$APP_URL\" --force",
             "@php artisan microservice:env-variable APP_URL \"$APP_URL_PROD\" --force --production",
             "@php artisan microservice:env-variable DB_USERNAME \"$DB_USERNAME\" --force",
