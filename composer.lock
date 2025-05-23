@@ -964,7 +964,7 @@
             "source": {
                 "type": "git",
                 "url": "https://home.timc.biz/getorder/core/package/core",
-                "reference": "bdd649f3a530988f5ee67b05d029a0c7d6351fe3"
+                "reference": "12cd8f8ce38ac1ce45b4b20b18b3381bd5714e42"
             },
             "require": {
                 "bfg/dto": "^1.4",
@@ -1023,7 +1023,7 @@
                 "laravel",
                 "php"
             ],
-            "time": "2025-05-22T00:43:19+00:00"
+            "time": "2025-05-23T13:47:54+00:00"
         },
         {
             "name": "graham-campbell/result-type",

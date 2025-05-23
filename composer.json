@@ -60,7 +60,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@git init",
+            "git init",
             "@php artisan key:generate --ansi",
             "@php artisan microservice:prepare-stubs",
             "@php artisan microservice:env-variable APP_URL \"$APP_URL\" --force",
