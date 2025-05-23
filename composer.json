@@ -57,7 +57,8 @@
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\""
         ],
         "post-create-project-cmd": [
             "git init",
@@ -68,7 +69,6 @@
             "@php artisan microservice:env-variable JWT_SECRET \"$JWT_SECRET\" --force",
             "@php artisan microservice:env-variable DB_USERNAME \"$DB_USERNAME\" --force",
             "@php artisan microservice:env-variable DB_PASSWORD \"$DB_PASSWORD\" --force",
-            "@php -r \"file_exists('.env.production') || copy('.env', '.env.production');\"",
             "@php artisan microservice:env-variable APP_URL \"$APP_URL_PROD\" --force --production",
             "@php artisan microservice:env-variable DB_USERNAME \"$DB_USERNAME_PROD\" --force --production",
             "@php artisan microservice:env-variable DB_PASSWORD \"$DB_PASSWORD_PROD\" --force --production"
