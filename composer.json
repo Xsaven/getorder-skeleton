@@ -65,13 +65,13 @@
             "@php artisan key:generate --ansi",
             "@php artisan microservice:prepare-stubs",
             "@php artisan microservice:env-variable APP_URL \"$APP_URL\" --force",
-            "@php artisan microservice:env-variable CURRENT_SERVICE_NAME \"$NODE_NAME\" --force",
-            "@php artisan microservice:env-variable JWT_SECRET \"$JWT_SECRET\" --force",
+            "@php artisan microservice:env-variable APP_URL \"$APP_URL_PROD\" --force --production",
             "@php artisan microservice:env-variable DB_USERNAME \"$DB_USERNAME\" --force",
             "@php artisan microservice:env-variable DB_PASSWORD \"$DB_PASSWORD\" --force",
-            "@php artisan microservice:env-variable APP_URL \"$APP_URL_PROD\" --force --production",
             "@php artisan microservice:env-variable DB_USERNAME \"$DB_USERNAME_PROD\" --force --production",
-            "@php artisan microservice:env-variable DB_PASSWORD \"$DB_PASSWORD_PROD\" --force --production"
+            "@php artisan microservice:env-variable DB_PASSWORD \"$DB_PASSWORD_PROD\" --force --production",
+            "@php artisan microservice:env-variable JWT_SECRET \"$JWT_SECRET\" --force --and-production",
+            "@php artisan microservice:env-variable CURRENT_SERVICE_NAME \"$NODE_NAME\" --force --and-production"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
