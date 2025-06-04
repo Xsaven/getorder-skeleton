@@ -35,7 +35,9 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-laravel": "^3.2",
+        "rector/rector": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -84,13 +86,12 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "pint": [
-            "./vendor/bin/pint --config vendor/getorder/core/pint.json"
-        ],
-        "pint-test": [
-            "./vendor/bin/pint --config vendor/getorder/core/pint.json --test"
-        ],
-        "analyse": "./vendor/bin/phpstan analyse --memory-limit=-1"
+        "arch-test": "@php artisan test --group=arch",
+        "pint": "./vendor/bin/pint --config vendor/getorder/core/pint.json",
+        "pint-test": "./vendor/bin/pint --config vendor/getorder/core/pint.json --test",
+        "analyse": "./vendor/bin/phpstan analyse --memory-limit=-1",
+        "rector": "./vendor/bin/rector process --clear-cache",
+        "rector:dry": "./vendor/bin/rector process --clear-cache --dry-run"
     },
     "extra": {
         "laravel": {
